@@ -93,6 +93,8 @@ spec:
           - containerPort: {{ .Values.service.port }}
             name: mongodb
           env:
+          - name: TZ
+            value: Asia/Shanghai
           {{- if .Values.image.debug}}
           - name: BITNAMI_DEBUG
             value: "true"
